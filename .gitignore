@@ -226,4 +226,3 @@ dataset_limpio_*.pkl
 ejercicios.ipynb
 # permite CSV aunque haya regla que los excluya
 !results.csv
-!schema.csv
