@@ -21,7 +21,7 @@ En JupyterLab, seleccionar el kernel **Fundamentos TPE** y ejecutar **Kernel →
 
 ## Datos
 
-La primera celda descarga `results.csv` y `schema.csv` si no están en la carpeta de ejecución. Ambos corresponden a la misma versión del [repositorio oficial](https://github.com/StackExchange/Survey/tree/6ae2209cd35a55e92739ba82f7887fb86807a069/packages/archive/2025). La primera ejecución requiere conexión a Internet y descarga aproximadamente 141 MB de respuestas. Ambos CSV se incluyen en el repositorio. El archivo results.csv se almacena mediante Git LFS. Para descargarlo al clonar el proyecto, es necesario tener Git LFS instalado y ejecutar git lfs pull desde la carpeta del repositorio.
+La primera celda descarga `results.csv` y `schema.csv` si no están en la carpeta de ejecución. Ambos corresponden a la misma versión del [repositorio oficial](https://github.com/StackExchange/Survey/tree/6ae2209cd35a55e92739ba82f7887fb86807a069/packages/archive/2025). La primera ejecución requiere conexión a Internet y descarga aproximadamente 141 MB de respuestas. El archivo results.csv se incluye en el repositorio; schema.csv se descarga automáticamente si no está disponible. El archivo results.csv se almacena mediante Git LFS. Para descargarlo al clonar el proyecto, es necesario tener Git LFS instalado y ejecutar git lfs pull desde la carpeta del repositorio.
 
 El archivo de respuestas tiene 49.191 registros y 172 columnas. Se conserva como entrada y las transformaciones se realizan sobre una copia. El notebook genera `dataset_limpio.pkl` con las variables seleccionadas y derivadas. Ese archivo se vuelve a generar durante la ejecución; no es una entrada necesaria.
 
