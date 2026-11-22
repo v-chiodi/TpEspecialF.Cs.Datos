@@ -34,9 +34,9 @@ El archivo de respuestas tiene 49.191 registros y 172 columnas. Se conserva como
 
 ## Criterios de interpretación
 
-La hipótesis multivariada relaciona tamaño de empresa (`OrgSize`), modalidad de trabajo (`RemoteWork`) y rol (`ICorPM`). Se construyen tablas de cantidades y porcentajes por tamaño y se aplica chi-cuadrado de independencia por separado a contribuidores individuales y responsables de personas. El planteo requiere asociación en ambos roles y no prueba causalidad ni un efecto de interacción.
+La hipótesis multivariada estudia la compensación anual media en USD de los desarrolladores profesionales de Estados Unidos mediante una regresión lineal múltiple. El tamaño de empresa (`OrgSize`), la modalidad de trabajo (`RemoteWork`) y el rol (`ICorPM`) entran como predictores categóricos. Los diagnósticos de los residuos mostraron problemas de normalidad y varianza, por lo que el ajuste se interpreta como exploratorio.
 
-Las comparaciones salariales usan compensación anual total en USD y medianas. La comparación argentina conserva las referencias del grupo: ARS 391.200 mensuales de SMVM y ARS 1.570 por USD. Son valores del escenario elegido para 2026, mientras que las compensaciones provienen de 2025.
+La prueba de la mediana compara la compensación anual total en USD de Estados Unidos e India. Para Argentina se usa la prueba del signo para comparar la mediana de esa compensación con tres SMVM anualizados. El escenario del grupo usa un SMVM de ARS 391.200 mensuales y un tipo de cambio de ARS 1.570 por USD. Esas referencias corresponden a 2026 y las compensaciones a la encuesta de 2025.
 
 En la hipótesis C se distinguen satisfacción general y prioridades laborales. `JobSatPoints_*` contiene rankings de importancia; no son calificaciones de satisfacción por aspecto. Se contrastan por separado la satisfacción general y el aspecto elegido como prioridad principal con la situación de cambio laboral.
 
