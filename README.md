@@ -2,6 +2,8 @@
 
 Análisis de Stack Overflow Developer Survey 2025. El trabajo está en `tp_especial.ipynb` e incluye exploración, limpieza, tres hipótesis del grupo y las tres preguntas propuestas por la cátedra.
 
+[Informe de reentrega (PDF)](INFORME%20-%20Reentrega%20Grupo%2011.pdf)
+
 ## Instalación y ejecución
 
 La ejecución se comprueba con Python 3.14.7. Las versiones de las dependencias están fijadas en `requirements.txt`.
@@ -21,7 +23,7 @@ En JupyterLab, seleccionar el kernel **Fundamentos TPE** y ejecutar **Kernel →
 
 ## Datos
 
-La primera celda descarga `results.csv` y `schema.csv` si no están en la carpeta de ejecución. Ambos corresponden a la misma versión del [repositorio oficial](https://github.com/StackExchange/Survey/tree/6ae2209cd35a55e92739ba82f7887fb86807a069/packages/archive/2025). La primera ejecución requiere conexión a Internet y descarga aproximadamente 141 MB de respuestas. El archivo results.csv se incluye en el repositorio; schema.csv se descarga automáticamente si no está disponible. El archivo results.csv se almacena mediante Git LFS. Para descargarlo al clonar el proyecto, es necesario tener Git LFS instalado y ejecutar git lfs pull desde la carpeta del repositorio.
+La primera celda descarga `results.csv` y `schema.csv` si no están en la carpeta de ejecución. Ambos corresponden a la misma versión del [repositorio oficial](https://github.com/StackExchange/Survey/tree/6ae2209cd35a55e92739ba82f7887fb86807a069/packages/archive/2025). El repositorio incluye `results.csv` mediante Git LFS. Si al clonar quedó solo el puntero de LFS, ejecutar `git lfs pull` desde la carpeta del repositorio antes de abrir el notebook. La descarga de `results.csv` ocupa aproximadamente 141 MB. Para descargar los archivos que falten, el notebook necesita conexión a Internet.
 
 El archivo de respuestas tiene 49.191 registros y 172 columnas. Se conserva como entrada y las transformaciones se realizan sobre una copia. El notebook genera `dataset_limpio.pkl` con las variables seleccionadas y derivadas. Ese archivo se vuelve a generar durante la ejecución; no es una entrada necesaria.
 
@@ -34,7 +36,7 @@ El archivo de respuestas tiene 49.191 registros y 172 columnas. Se conserva como
 
 ## Criterios de interpretación
 
-La hipótesis multivariada estudia la compensación anual media en USD de los desarrolladores profesionales de Estados Unidos mediante una regresión lineal múltiple. El tamaño de empresa (`OrgSize`), la modalidad de trabajo (`RemoteWork`) y el rol (`ICorPM`) entran como predictores categóricos. Los diagnósticos de los residuos mostraron problemas de normalidad y varianza, por lo que el ajuste se interpreta como exploratorio.
+La hipótesis multivariada estudia la probabilidad de declarar trabajo totalmente remoto (`RemoteWork`) entre profesionales de Estados Unidos. La regresión logística incluye tamaño de empresa (`OrgSize`), rol (`ICorPM`), tramo de experiencia (`WorkExp`) y sector (`Industry`). Los odds ratios comparan cada tamaño con empresas de 1.000 a 4.999 empleados. La decisión sobre H₀ corresponde a la comparación entre empresas de 500 a 999 y de 1.000 a 4.999 empleados y se interpreta a partir del intervalo de confianza del 95 %.
 
 La prueba de la mediana compara la compensación anual total en USD de Estados Unidos e India. Para Argentina se usa la prueba del signo para comparar la mediana de esa compensación con tres SMVM anualizados. El escenario del grupo usa un SMVM de ARS 391.200 mensuales y un tipo de cambio de ARS 1.570 por USD. Esas referencias corresponden a 2026 y las compensaciones a la encuesta de 2025.
 
